@@ -96,7 +96,6 @@ plugins=(
   sudo
   web-search
   z
-  zsh-aliases-exa
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -131,10 +130,21 @@ export BAT_STYLE=full
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# ## exa
-alias exa='exa --icons'
+## exa
+### general use
+alias eza='eza --icons'
+alias ls='eza'                                                         # ls
+alias l='eza -lbF --git'                                               # list, size, type, git
+alias lm='eza -lbF --git --sort modified'                              # list, modified date sort
+alias ll='eza -lbGF --git'                                             # long list
+alias la='eza -lbhHigUmuSa --time-style long-iso --git --color-scale'  # all list
+alias lx='eza -lbhHigUmuSa@ --time-style long-iso --git --color-scale' # all + extended list
+### specialty views
+alias lS='eza -1 --no-icons'                                           # one column, just names
+alias lt='eza --tree --level=2'                                        # tree
+alias lT='eza --tree'                                                  # big tree
 
-# ## bat
+## bat
 alias cat=prettybat
 alias rg='batgrep --color=auto'
 alias man=batman
