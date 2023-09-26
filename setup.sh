@@ -1,3 +1,4 @@
+# TODO: should create backup
 rm -rf $HOME/.oh-my-zsh
 rm -rf $HOME/.z* 
 

@@ -96,6 +96,7 @@ plugins=(
   sudo
   web-search
   z
+  zsh-aliases-exa
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -125,6 +126,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias exa='exa --icons'
 
 # Powerlevel10k theme
 source /usr/local/share/powerlevel10k/powerlevel10k.zsh-theme
