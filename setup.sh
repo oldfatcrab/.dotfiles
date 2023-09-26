@@ -8,5 +8,6 @@ ln -s $(pwd)/zshenv $HOME/.zshenv
 ln -s $(pwd)/zlogin $HOME/.zlogin
 ln -s $(pwd)/zprofile $HOME/.zprofile
 ln -s $(pwd)/zlogout $HOME/.zlogout
+ln -s $(pwd)/p10k.zsh $HOME/.p10k.zsh
 
 source $HOME/.zshrc
