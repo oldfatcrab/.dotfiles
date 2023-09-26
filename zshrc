@@ -103,6 +103,10 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+# ## bat
+export BAT_THEME=Dracula
+export BAT_STYLE=full
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -126,7 +130,16 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# ## exa
 alias exa='exa --icons'
+
+# ## bat
+alias cat=prettybat
+alias rg='batgrep --color=auto'
+alias man=batman
+alias watch='batwatch --color=auto'
+alias diff='batdiff --color=auto'
 
 # Powerlevel10k theme
 source /usr/local/share/powerlevel10k/powerlevel10k.zsh-theme
