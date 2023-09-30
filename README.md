@@ -39,7 +39,7 @@ or any [nerd font](https://www.nerdfonts.com/font-downloads) you like.
 
 - Get a colour scheme:
    - Pick a colour scheme [here](https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/README.md)
-   - or you can download the one I am using (link) - based on the [Dracula](https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/README.md#dracula) theme, some modifications have been made so that each colour in the theme is distinguished from others
+   - or you can download the one I am using ([link](https://github.com/oldfatcrab/.dotfiles/blob/master/iterm2/golson.itermcolors)) - based on the [Dracula](https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/README.md#dracula) theme, some modifications have been made so that each colour in the theme is distinguished from others
 - In iterm2, press `cmd-comma` to go to preference settings
 - In `Profile`, `Colors`, select `Color presets`, import the color scheme and apply the change
 - In `Profile`, `Font`, select the nerd font you downloaded, maybe change other font settings
