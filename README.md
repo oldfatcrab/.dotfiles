@@ -7,6 +7,8 @@ cd $HOME
 source setup.sh
 ```
 
+---
+
 Or if you want to set it up manually and/or make your preferred modification, follow these steps...
 
 ## Step 0: Quick setups I recommend everyone should do after getting a new Mac
