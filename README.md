@@ -63,3 +63,25 @@ source $HOME/.zshrc
 and finish the configuration.
 
 ## Step 1: make an eye-candy-like terminal
+
+### Some prep work
+Open `~/.zshrc` and add this line to the top:
+```
+if [ -z "$HOMEBREW_PREFIX" ]; then export HOMEBREW_PREFIX="$(brew --prefix)"; fi
+```
+
+### Command syntax highlighting
+Install brew formula
+```
+brew install zsh-syntax-highlighting
+```
+add this line to the end of `~/.zshrc` file
+```
+source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+```
+
+### Colorize `ls`
+Install brew formula
+```
+brew install eza
+```
