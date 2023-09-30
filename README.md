@@ -25,6 +25,7 @@ or you can choose any terminal you want...
 I so want to use [Warp terminal](https://www.warp.dev/) but it
 1. still have some minor bugs with [powerlevel10k](https://github.com/dracula/powerlevel10k); and
 1. more importantly, not compatible with [fzf](https://github.com/junegunn/fzf) (ctrl-r not working, refer to https://github.com/warpdotdev/warp/issues/149), and there command/file search is far from as good as fzf.
+   
 If Warp terminal fix above then I will re-consider using it.
 
 ### Install MesloLGS Nerd Font
