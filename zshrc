@@ -10,7 +10,7 @@ fi
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-# export HOMEBREW_PREFIX="$(brew --prefix)"
+export HOMEBREW_PREFIX="$(brew --prefix)"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -79,21 +79,10 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  aws
-  colored-man-pages
-  docker
-  fancy-ctrl-z
   fzf
   git
-  kubectl
   macos
-  pip
-  python
-  pyenv
   ripgrep
-  screen
-  tmux
-  tmuxinator
   sudo
   web-search
   z
@@ -153,10 +142,9 @@ alias watch='batwatch --color=auto'
 alias diff='batdiff --color=auto'
 
 # source brewed packages
-source /usr/local/share/powerlevel10k/powerlevel10k.zsh-theme
-# source $HOMEBREW_PREFIX/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-# source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-# source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# powerlevel10k
+source $HOMEBREW_PREFIX/share/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
