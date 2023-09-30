@@ -85,3 +85,40 @@ Install brew formula
 ```
 brew install eza
 ```
+add the following aliases to the end of `~/.zshrc` file
+```
+## exa
+### general use
+alias eza='eza --icons'
+alias ls='eza'                                                         # ls
+alias l='eza -lbF --git'                                               # list, size, type, git
+alias lm='eza -lbF --git --sort modified'                              # list, modified date sort
+alias ll='eza -lbGF --git'                                             # long list
+alias la='eza -lbhHigUmuSa --time-style long-iso --git --color-scale'  # all list
+alias lx='eza -lbhHigUmuSa@ --time-style long-iso --git --color-scale' # all + extended list
+### specialty views
+alias lS='eza -1 --no-icons'                                           # one column, just names
+alias lt='eza --tree --level=2'                                        # tree
+alias lT='eza --tree'                                                  # big tree
+```
+Now the `ls` and related shortcut commands become colourful and there will be an icon in front of the file name.
+
+> Tip: if you want to copy the result without icons, add `--no-icons` following the above commands
+
+### Colorize `cat`
+Install brew formula
+```
+brew install bat bat-extras black chroma clang-format gawk grep prettier pygments shfmt
+```
+add the following aliases to the end of `~/.zshrc` file
+```
+## bat
+alias cat=prettybat
+alias rg='batgrep --color=auto'
+alias man=batman
+alias watch='batwatch --color=auto'
+alias diff='batdiff --color=auto'
+```
+Now the above commands become colourful and prettified, showing line number and git changes.
+
+> Tip: if you want to copy the result without the line numbers, add `-p` option following the above commands
