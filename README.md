@@ -1,11 +1,14 @@
 # Golson's MacOS ZSH Setup
 
-Usage for lazy ones like me:
+## Usage 
+
+for lazy ones like me:
 ```
 git clone https://github.com/oldfatcrab/.dotfiles.git $HOME
 cd $HOME
 source setup.sh
 ```
+and don't bother with the following...
 
 ---
 
