@@ -80,7 +80,7 @@ add this line to the end of `~/.zshrc` file
 source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ```
 
-### Colorize `ls`
+### Colourize `ls`
 Install brew formula
 ```
 brew install eza
@@ -105,7 +105,7 @@ Now the `ls` and related shortcut commands become colourful and there will be an
 
 > Tip: if you want to copy the result without icons, add `--no-icons` following the above commands
 
-### Colorize `cat`
+### Colourize `cat`, `rg`, `man`, `watch`, `diff` and `--help`
 Install brew formula
 ```
 brew install bat bat-extras black chroma clang-format gawk grep prettier pygments shfmt
@@ -113,12 +113,17 @@ brew install bat bat-extras black chroma clang-format gawk grep prettier pygment
 add the following aliases to the end of `~/.zshrc` file
 ```
 ## bat
-alias cat=prettybat
+export BAT_THEME=Dracula
+alias cat='prettybat --style=full'
 alias rg='batgrep --color=auto'
 alias man=batman
 alias watch='batwatch --color=auto'
-alias diff='batdiff --color=auto'
+alias diff='batdiff --color=auto --paging=never'
+alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'
+alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
 ```
-Now the above commands become colourful and prettified, showing line number and git changes.
+For above `BAT_THEME`, you can choose one from `bat --list-themes`.
+
+Now the above commands become colourful and prettified, showing line number and git changes. Also the `--help` option is colourized.
 
 > Tip: if you want to copy the result without the line numbers, add `-p` option following the above commands
