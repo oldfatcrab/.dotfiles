@@ -95,7 +95,6 @@ source $ZSH/oh-my-zsh.sh
 
 # ## bat
 export BAT_THEME=Dracula
-export BAT_STYLE=full
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -136,11 +135,13 @@ alias lt='eza --tree --level=2'                                        # tree
 alias lT='eza --tree'                                                  # big tree
 
 ## bat
-alias cat=prettybat
+alias cat='prettybat --style=full'
 alias rg='batgrep --color=auto'
 alias man=batman
 alias watch='batwatch --color=auto'
-alias diff='batdiff --color=auto'
+alias diff='batdiff --color=auto --paging=never'
+alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'
+alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
 
 # source brewed packages
 source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -149,3 +150,4 @@ source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source $HOMEBREW_PREFIX/share/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
