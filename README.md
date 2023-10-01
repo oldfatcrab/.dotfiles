@@ -127,3 +127,27 @@ For above `BAT_THEME`, you can choose one from `bat --list-themes`.
 Now the above commands become colourful and prettified, showing line number and git changes. Also the `--help` option is colourized.
 
 > Tip: if you want to copy the result without the line numbers, add `-p` option following the above commands
+
+### Colourize `git diff`
+
+Install brew formula
+```
+brew install git git-delta
+```
+add the following aliases to the end of `~/.zshrc` file
+```
+## bat
+export BAT_THEME=Dracula
+alias cat='prettybat --style=full'
+alias rg='batgrep --color=auto'
+alias man=batman
+alias watch='batwatch --color=auto'
+alias diff='batdiff --color=auto --paging=never'
+alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'
+alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
+```
+For above `BAT_THEME`, you can choose one from `bat --list-themes`.
+
+Now the above commands become colourful and prettified, showing line number and git changes. Also the `--help` option is colourized.
+
+> Tip: if you want to copy the result without the line numbers, add `-p` option following the above commands
