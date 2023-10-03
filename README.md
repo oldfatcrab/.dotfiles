@@ -151,3 +151,15 @@ git config --global delta.zero-style "dim syntax"
 ```
 
 > Tip: if you want to use `delta` instead of `batdiff` (aliased to be `diff` above) to check diff for files, you can do `delta file_1 file_2`
+
+## Step 2: Setup `fzf` for powerful reverse-command/file search
+
+TBD
+
+## Step 3: Set up vim editor
+
+TBD
+
+## Step 4: Set up tmux
+
+TBD
