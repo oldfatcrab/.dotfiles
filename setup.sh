@@ -12,6 +12,9 @@ ln -s $(pwd)/zlogin $HOME/.zlogin
 ln -s $(pwd)/zprofile $HOME/.zprofile
 ln -s $(pwd)/zlogout $HOME/.zlogout
 ln -s $(pwd)/p10k.zsh $HOME/.p10k.zsh
-ln -s $(pwd)/gitconfig $HOME/.gitconfig
+
+# gitconfig
+git config --global core.pager delta
+git config --global include.path "$PWD/delta.gitconfig"
 
 source $HOME/.zshrc
