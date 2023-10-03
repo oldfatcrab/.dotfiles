@@ -5,7 +5,7 @@
 for lazy ones like me:
 ```
 git clone https://github.com/oldfatcrab/.dotfiles.git $HOME/.dotfiles --recurse-submodules
-cd $HOME
+cd $HOME/.dotfiles
 source setup.sh
 ```
 and don't bother with the following...
