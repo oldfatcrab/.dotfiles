@@ -105,7 +105,7 @@ Now the `ls` and related shortcut commands become colourful and there will be an
 
 > Tip: if you want to copy the result without icons, add `--no-icons` following the above commands
 
-### Colourize `cat`, `rg`, `man`, `watch`, `diff` and `--help`
+### Colourize `cat`, `less`, `rg`, `man`, `watch`, `diff` and `--help`
 Install brew formula
 ```
 brew install bat bat-extras black chroma clang-format gawk grep prettier pygments shfmt
@@ -114,8 +114,8 @@ add the following aliases to the end of `~/.zshrc` file
 ```
 ## bat
 export BAT_THEME=Dracula
-alias cat='prettybat --style=full'
-alias rg='batgrep --color=auto'
+alias cat='prettybat --style=full --paging=never -p'
+alias less='prettybat --style=full'alias rg='batgrep --color=auto'
 alias man=batman
 alias watch='batwatch --color=auto'
 alias diff='batdiff --color=auto --paging=never'
