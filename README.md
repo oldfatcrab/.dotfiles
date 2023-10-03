@@ -115,7 +115,8 @@ add the following aliases to the end of `~/.zshrc` file
 ## bat
 export BAT_THEME=Dracula
 alias cat='prettybat --style=full --paging=never -p'
-alias less='prettybat --style=full'alias rg='batgrep --color=auto'
+alias less='prettybat --style=full'
+alias rg='batgrep --color=auto'
 alias man=batman
 alias watch='batwatch --color=auto'
 alias diff='batdiff --color=auto --paging=never'
