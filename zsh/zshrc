@@ -137,7 +137,7 @@ alias lT='eza --tree'                                                  # big tre
 ## bat
 alias cat='prettybat --style=full --paging=never -p'
 alias less='prettybat --style=full'
-alias rg='batgrep --color=auto'
+alias rg='batgrep --color=auto --paging=never'
 alias man=batman
 alias watch='batwatch --color=auto'
 alias diff='batdiff --color=auto --paging=never'
