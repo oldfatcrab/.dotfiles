@@ -1,0 +1,21 @@
+[interactive]
+  diffFilter = delta --color-only
+
+[merge]
+  conflictstyle = diff3
+
+[diff]
+  colorMoved = default
+
+[delta]
+  navigate = true    # use n and N to move between diff sections
+  light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+  features = decorations
+  
+[delta "decorations"]
+  dark = true
+  line-numbers = true
+  side-by-side = true
+  syntax-theme = Dracula
+  true-color = always
+  zero-style = dim syntax

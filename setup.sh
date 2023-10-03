@@ -5,13 +5,13 @@ rm -rf $HOME/.oh-my-zsh
 rm -rf $HOME/.z* 
 
 # create symbolic link to dotfiles
-ln -s $(pwd)/ohmyzsh $HOME/.oh-my-zsh
-ln -s $(pwd)/zshrc $HOME/.zshrc
-ln -s $(pwd)/zshenv $HOME/.zshenv
-ln -s $(pwd)/zlogin $HOME/.zlogin
-ln -s $(pwd)/zprofile $HOME/.zprofile
-ln -s $(pwd)/zlogout $HOME/.zlogout
-ln -s $(pwd)/p10k.zsh $HOME/.p10k.zsh
+ln -s $PWD/ohmyzsh $HOME/.oh-my-zsh
+ln -s $PWD/zshrc $HOME/.zshrc
+ln -s $PWD/zshenv $HOME/.zshenv
+ln -s $PWD/zlogin $HOME/.zlogin
+ln -s $PWD/zprofile $HOME/.zprofile
+ln -s $PWD/zlogout $HOME/.zlogout
+ln -s $PWD/p10k.zsh $HOME/.p10k.zsh
 
 # gitconfig
 git config --global core.pager delta
