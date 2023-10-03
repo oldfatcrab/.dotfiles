@@ -17,7 +17,6 @@ ln -s $PWD/zsh/p10k.zsh $HOME/.p10k.zsh
 brew bundle --file "$PWD/brew/Brewfile"
 (echo; echo 'eval "$(/usr/local/bin/brew shellenv)"') >> "$(HOME)/.zprofile"
 eval "$(/usr/local/bin/brew shellenv)"
-eval "$(/usr/local/bin/brew shellenv)"
 
 # gitconfig:"
 git config --global core.pager delta
