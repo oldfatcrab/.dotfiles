@@ -156,10 +156,10 @@ git config --global delta.zero-style "dim syntax"
 
 TBD
 
-## Step 3: Set up vim editor
+## Step 3: Set up `vim` editor
 
 TBD
 
-## Step 4: Set up tmux
+## Step 4: Set up `tmux`
 
 TBD
