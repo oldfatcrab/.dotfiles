@@ -2,8 +2,8 @@
 CURRENT_TIME=$(date '+%Y_%m_%d_%H_%M_%S')
 
 # Brew installation
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-brew bundle --file "$PWD/brew/Brewfile"
+#/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+#brew bundle --file "$PWD/brew/Brewfile"
 
 # backup old configuration files
 if [ -d $HOME/.oh-my-zsh ]; then cp -r $HOME/.oh-my-zsh "$HOME/.oh-my-zsh_backup_$CURRENT_TIME" && rm -rf $HOME/.oh-my-zsh; fi
