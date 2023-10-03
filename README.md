@@ -116,7 +116,7 @@ add the following aliases to the end of `~/.zshrc` file
 export BAT_THEME=Dracula
 alias cat='prettybat --style=full --paging=never -p'
 alias less='prettybat --style=full'
-alias rg='batgrep --color=auto'
+alias rg='batgrep --color=auto --paging=never'
 alias man=batman
 alias watch='batwatch --color=auto'
 alias diff='batdiff --color=auto --paging=never'
@@ -158,10 +158,14 @@ git config --global delta.zero-style "dim syntax"
 
 TBD
 
-## Step 3: Set up `vim` editor
+## Step 3: Set up `git`
 
 TBD
 
-## Step 4: Set up `tmux`
+## Step 4: Set up `vim` editor
+
+TBD
+
+## Step 5: Set up `tmux`
 
 TBD
