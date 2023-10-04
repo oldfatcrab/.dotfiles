@@ -133,14 +133,14 @@ Now the above commands become colourful and prettified, showing line number and 
 
 Install brew formula
 ```
-brew install git git-delta
+brew install git git-delta git-gui
 ```
 Use the following commands to configure git:
 ```
 git config --global core.pager delta
 git config --global color.ui auto
-git config --global interactive.diffFilter = delta --color-only
-git config --global merge.conflictstyle = diff3
+git config --global interactive.diffFilter "delta --color-only"
+git config --global merge.conflictstyle diff3
 git config --global diff.colorMoved default
 git config --global delta.navigate true
 git config --global delta.features decorations
