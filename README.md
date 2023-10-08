@@ -186,6 +186,9 @@ export FZF_CTRL_R_OPTS="
 # Print tree structure in the preview window
 export FZF_ALT_C_OPTS="--preview 'tree -C {}'"
 
+# Use ~~ as the trigger sequence instead of the default **
+export FZF_COMPLETION_TRIGGER=''
+
 # Use fd (https://github.com/sharkdp/fd) instead of the default find
 # command for listing path candidates.
 # - The first argument to the function ($1) is the base path to start traversal
@@ -216,6 +219,12 @@ _fzf_comprun() {
 ```
 Didn't get too fancy with this because I am not a guru. My fzf will do the followings:
 
+- `<tab>`: auto-complete the command, for example:
+  - `cd <tab>` completes the directory with a preview of tree
+  - `kill <tab>` completes process id with process detail
+  - `ssh/telnet <tab>` completes host with DIG detail
+  - `unset/export/unalias <tab>` completes variables/alias
+  - otherwise it will search for the file/directory
 - `Ctrl-R`: fuzzy search command history
   - If command is long and windows doesn't show complete command, press `Ctrl-\` to show the complete command
   - `Ctrl-Y` will copy the command to the clipboard
@@ -224,12 +233,6 @@ Didn't get too fancy with this because I am not a guru. My fzf will do the follo
   - use `tab` to multiselect files
 - `Esc-C`: fast `cd` into directory you want
   - with a window previewing the tree structure under it
-- `**<tab>`: auto-complete the command, for example:
-  - `cd **<tab>` completes the directory with a preview of tree
-  - `kill **<tab>` completes process id with process detail
-  - `ssh/telnet **<tab>` completes host with DIG detail
-  - `unset/export/unalias **<tab>` completes variables/alias
-  - otherwise it will search for the file/directory
 - you can use up/down arrow to select, or `Ctrl-K`/`Ctrl-J`, `Ctrl-N`/`Ctrl-P`
 - you can use `tab` to multi-select
 
