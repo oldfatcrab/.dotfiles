@@ -9,6 +9,7 @@ if [ -e $HOME/.gitconfig ]; then cp $HOME/.gitconfig "$HOME/.gitconfig_backup_$C
 
 # create symbolic link to dotfiles
 ln -s $PWD/submodules/ohmyzsh $HOME/.oh-my-zsh
+ln -s $PWD/submodules/fzf-tab $HOME/.oh-my-zsh/custom/plugins/fzf-tab
 ln -s $PWD/zsh/zshrc $HOME/.zshrc
 ln -s $PWD/zsh/p10k.zsh $HOME/.p10k.zsh
 

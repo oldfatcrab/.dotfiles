@@ -81,6 +81,7 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   fzf
+  fzf-tab
   git
   macos
   ripgrep
@@ -118,7 +119,7 @@ export FZF_CTRL_R_OPTS="
 # Print tree structure in the preview window
 export FZF_ALT_C_OPTS="--preview 'eza --tree --level=2 --icons --color=always {}'"
 
-export FZF_COMPLETION_TRIGGER=''
+export FZF_COMPLETION_TRIGGER='**'
 
 # Use fd (https://github.com/sharkdp/fd) instead of the default find
 # command for listing path candidates.
