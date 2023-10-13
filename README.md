@@ -156,10 +156,14 @@ git config --global delta.zero-style "dim syntax"
 
 ## Step 2: Setup `fzf` for powerful reverse-command/file search
 
-Install brew formula
+### Install brew formula
 ```
 brew install fd fzf
 ```
+and add `fzf` to plugins in `~/.zshrc`
+
+### Configure `fzf`
+
 Refer to [fzf example](https://github.com/junegunn/fzf/blob/master/README.md#examples) to customize your fzf
 
 I added the following aliases to the end of `~/.zshrc` file
@@ -169,11 +173,6 @@ export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_DEFAULT_OPTS="--layout=reverse --inline-info"
 export FZF_COMPLETION_OPTS='--border --info=inline'
 
-# Preview file content using bat (https://github.com/sharkdp/bat)
-export FZF_CTRL_T_OPTS="
-  --preview 'bat -n --color=always {}'
-  --bind 'ctrl-/:change-preview-window(down|hidden|)'"
-
 # CTRL-/ to toggle small preview window to see the full command
 # CTRL-Y to copy the command into clipboard using pbcopy
 export FZF_CTRL_R_OPTS="
@@ -182,57 +181,10 @@ export FZF_CTRL_R_OPTS="
   --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
   --color header:italic
   --header 'Press CTRL-Y to copy command into clipboard'"
-
-# Print tree structure in the preview window
-export FZF_ALT_C_OPTS="--preview 'eza --tree --level=2 --icons --color=always {}'"
-
-# Use ~~ as the trigger sequence instead of the default **
-export FZF_COMPLETION_TRIGGER=''
-
-# Use fd (https://github.com/sharkdp/fd) instead of the default find
-# command for listing path candidates.
-# - The first argument to the function ($1) is the base path to start traversal
-# - See the source code (completion.{bash,zsh}) for the details.
-_fzf_compgen_path() {
-  fd --hidden --follow --exclude ".git" . "$1"
-}
-
-# Use fd to generate the list for directory completion
-_fzf_compgen_dir() {
-  fd --type d --hidden --follow --exclude ".git" . "$1"
-}
-
-# Advanced customization of fzf options via _fzf_comprun function
-# - The first argument to the function is the name of the command.
-# - You should make sure to pass the rest of the arguments to fzf.
-_fzf_comprun() {
-  local command=$1
-  shift
-
-  case "$command" in
-    cd) fzf --preview 'eza --tree --level=2 --icons --color=always {} | head -200' "$@" ;;
-    export|unset) fzf --preview "eval 'echo \$'{}" "$@" ;;
-    ssh) fzf --preview 'dig {}' "$@" ;;
-    *) fzf --preview 'bat -n --color=always {}' "$@" ;;
-  esac
-}
 ```
-Didn't get too fancy with this because I am not a guru. My fzf will do the followings:
-
-- `<tab>`: auto-complete the command, for example:
-  - `cd <tab>` completes the directory with a preview of tree
-  - `kill <tab>` completes process id with process detail
-  - `ssh/telnet <tab>` completes host with DIG detail
-  - `unset/export/unalias <tab>` completes variables/alias
-  - otherwise it will search for the file/directory
-- `Ctrl-R`: fuzzy search command history
-  - If command is long and windows doesn't show complete command, press `Ctrl-\` to show the complete command
-  - `Ctrl-Y` will copy the command to the clipboard
-- `Ctrl-T`: fuzzy search file/directory under curent directory
-  - with a window previewing the content of the file
-  - use `tab` to multiselect files
-- `Esc-C`: fast `cd` into directory you want
-  - with a window previewing the tree structure under it
+After you press `Ctrl-R`: to fuzzy-search command history
+- If command is long and windows doesn't show complete command, press `Ctrl-\` to show the complete command
+- `Ctrl-Y` will copy the command to the clipboard
 - you can use up/down arrow to select, or `Ctrl-K`/`Ctrl-J`, `Ctrl-N`/`Ctrl-P`
 - you can use `tab` to multi-select
 
