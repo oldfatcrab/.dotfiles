@@ -19,6 +19,8 @@ Or if you want to set it up manually and/or make your preferred modification, fo
 ### Homebrew
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+(echo; echo 'eval "$(/usr/local/bin/brew shellenv)"') >> "$HOME/.zprofile"
+eval "$(/usr/local/bin/brew shellenv)"
 ```
 
 ### iterm2 
