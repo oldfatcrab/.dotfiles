@@ -220,8 +220,10 @@ zstyle ':fzf-tab:complete:systemctl-*:*' fzf-preview 'SYSTEMD_COLORS=1 systemctl
 zstyle ':fzf-tab:complete:*:*' fzf-preview '~/.fzf_completion_preview ${(Q)word} ${(Q)group} ${(Q)realpath}'
 ```
 After you press `Tab` to fuzzy-complete command
+- there is a preview windows on the right 
 - you can use `space` to complete, or use `enter` to execute the command directly after completion is done
 - you can use up/down arrow to select, or `Ctrl-K`/`Ctrl-J`, `Ctrl-N`/`Ctrl-P`
+- you can use `,`/`.` to switch between groups
 
 ## Step 3: Set up `git`
 
