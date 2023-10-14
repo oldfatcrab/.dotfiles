@@ -182,11 +182,46 @@ export FZF_CTRL_R_OPTS="
   --color header:italic
   --header 'Press CTRL-Y to copy command into clipboard'"
 ```
-After you press `Ctrl-R`: to fuzzy-search command history
+After you press `Ctrl-R` to fuzzy-search command history
 - If command is long and windows doesn't show complete command, press `Ctrl-\` to show the complete command
 - `Ctrl-Y` will copy the command to the clipboard
 - you can use up/down arrow to select, or `Ctrl-K`/`Ctrl-J`, `Ctrl-N`/`Ctrl-P`
 - you can use `tab` to multi-select
+
+### Use `Tab` for command completion
+I added the following aliases to the end of `~/.zshrc` file:
+```
+# disable sort when completing `git checkout`
+zstyle ':completion:*:git-checkout:*' sort false
+# set descriptions format to enable group support
+zstyle ':completion:*:descriptions' format '[%d]'
+# set list-colors to enable filename colorizing
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+# preview directory's content with exa when completing cd
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --tree --level=2 --icons --color=always $realpath'
+# switch group using `,` and `.`
+zstyle ':fzf-tab:*' switch-group ',' '.'
+# set minimum height to 50%
+zstyle ':fzf-tab:*' fzf-flags '--height=50%'
+
+# use space to complete, and enter to direct execute
+zstyle ':fzf-tab:*' fzf-bindings 'space:accept'
+zstyle ':fzf-tab:*' accept-line enter
+
+# give a preview of commandline arguments when completing `kill`
+zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm -w -w"
+zstyle ':fzf-tab:complete:(kill|ps):argument-rest' fzf-preview '[[ $group == "[process ID]" ]] && ps -p $word -o command -w | tail -n +2'
+zstyle ':fzf-tab:complete:(kill|ps):argument-rest' fzf-flags --preview-window=down:3:wrap
+
+# show systemd unit status
+zstyle ':fzf-tab:complete:systemctl-*:*' fzf-preview 'SYSTEMD_COLORS=1 systemctl status $word'
+
+# show file contents
+zstyle ':fzf-tab:complete:*:*' fzf-preview '~/.fzf_completion_preview ${(Q)word} ${(Q)group} ${(Q)realpath}'
+```
+After you press `Tab` to fuzzy-complete command
+- you can use `space` to complete, or use `enter` to execute the command directly after completion is done
+- you can use up/down arrow to select, or `Ctrl-K`/`Ctrl-J`, `Ctrl-N`/`Ctrl-P`
 
 ## Step 3: Set up `git`
 
