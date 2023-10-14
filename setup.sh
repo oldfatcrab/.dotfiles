@@ -16,12 +16,12 @@ ln -s $PWD/zsh/p10k.zsh $HOME/.p10k.zsh
 ln -s $PWD/zsh/fzf_completion_preview.zsh $HOME/.fzf_completion_preview
 
 # Brew installation
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-brew bundle --file "$PWD/brew/Brewfile"
-(echo; echo 'eval "$(/usr/local/bin/brew shellenv)"') >> "$(HOME)/.zprofile"
+#/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+#brew bundle --file "$PWD/brew/Brewfile"
+(echo; echo 'eval "$(/usr/local/bin/brew shellenv)"') >> "$HOME/.zprofile"
 eval "$(/usr/local/bin/brew shellenv)"
 
-# gitconfig:"
+# gitconfig
 git config --global core.pager delta
 git config --global include.path "$PWD/git/delta.gitconfig"
 git config --global color.ui auto
