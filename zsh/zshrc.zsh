@@ -90,6 +90,8 @@ plugins=(
   z
 )
 
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -123,10 +125,6 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --tree --level=2 --icons --colo
 zstyle ':fzf-tab:*' switch-group ',' '.'
 # set minimum height to 50%
 zstyle ':fzf-tab:*' fzf-flags '--height=50%'
-
-# use space to complete, and enter to direct execute
-zstyle ':fzf-tab:*' fzf-bindings 'space:accept'
-zstyle ':fzf-tab:*' accept-line enter
 
 # give a preview of commandline arguments when completing `kill`
 zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm -w -w"
