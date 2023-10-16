@@ -14,6 +14,7 @@ ln -s $PWD/submodules/fzf-tab $HOME/.oh-my-zsh/custom/plugins/fzf-tab
 ln -s $PWD/zsh/zshrc.zsh $HOME/.zshrc
 ln -s $PWD/zsh/p10k.zsh $HOME/.p10k.zsh
 ln -s $PWD/zsh/fzf_completion_preview.zsh $HOME/.fzf_completion_preview
+ln -s $PWD/submodules/zsh-completions $HOME/.oh-my-zsh/custom/plugins/zsh-completions
 
 # Brew installation
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
