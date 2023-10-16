@@ -160,7 +160,7 @@ git config --global delta.zero-style "dim syntax"
 
 ### Install brew formula
 ```
-brew install fd fzf
+brew install fd fzf zsh-completions
 ```
 and add `fzf` to plugins in `~/.zshrc`
 
@@ -190,6 +190,11 @@ After you press `Ctrl-R` to fuzzy-search command history
 - you can use up/down arrow to select, or `Ctrl-K`/`Ctrl-J`, `Ctrl-N`/`Ctrl-P`
 - you can use `tab` to multi-select
 
+Also add this before line `source $ZSH/oh-my-zsh.sh`:
+```
+fpath+=$HOMEBREW_PREFIX/share/zsh-completions/src
+```
+
 ### Use `Tab` for command completion
 I added the following aliases to the end of `~/.zshrc` file:
 ```
@@ -205,10 +210,6 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --tree --level=2 --icons --colo
 zstyle ':fzf-tab:*' switch-group ',' '.'
 # set minimum height to 50%
 zstyle ':fzf-tab:*' fzf-flags '--height=50%'
-
-# use space to complete, and enter to direct execute
-zstyle ':fzf-tab:*' fzf-bindings 'space:accept'
-zstyle ':fzf-tab:*' accept-line enter
 
 # give a preview of commandline arguments when completing `kill`
 zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm -w -w"
