@@ -160,9 +160,9 @@ git config --global delta.zero-style "dim syntax"
 
 ### Install brew formula
 ```
-brew install fd fzf zsh-completions
+brew install fd fzf
 ```
-and add `fzf` to plugins in `~/.zshrc`
+and add `fzf` and `zsh-completion` to plugins in `~/.zshrc`
 
 ### Configure `fzf`
 
@@ -189,11 +189,6 @@ After you press `Ctrl-R` to fuzzy-search command history
 - `Ctrl-Y` will copy the command to the clipboard
 - you can use up/down arrow to select, or `Ctrl-K`/`Ctrl-J`, `Ctrl-N`/`Ctrl-P`
 - you can use `tab` to multi-select
-
-Also add this before line `source $ZSH/oh-my-zsh.sh`:
-```
-fpath+=$HOMEBREW_PREFIX/share/zsh-completions/src
-```
 
 ### Use `Tab` for command completion
 I added the following aliases to the end of `~/.zshrc` file:
