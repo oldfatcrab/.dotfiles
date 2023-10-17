@@ -134,8 +134,7 @@ zstyle ':fzf-tab:complete:(kill|ps):argument-rest' fzf-flags --preview-window=do
 zstyle ':fzf-tab:complete:systemctl-*:*' fzf-preview 'SYSTEMD_COLORS=1 systemctl status $word'
 
 # show file contents
-zstyle ':fzf-tab:complete:*:*' fzf-preview '~/.fzf_completion_preview ${(Q)word} ${(Q)group} ${(Q)realpath}'
-
+zstyle ':fzf-tab:complete:*:*' fzf-preview '~/.fzf_completion_preview ${(Q)word} ${(Q)group} ${(Q)realpath} ${(Q)desc}'
 
 # export MANPATH="/usr/local/man:$MANPATH"
 

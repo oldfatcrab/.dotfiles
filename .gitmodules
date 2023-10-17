@@ -1,10 +1,9 @@
 [submodule "ohmyzsh"]
 	path = submodules/ohmyzsh
 	url = git@github.com:ohmyzsh/ohmyzsh.git
-[submodule "submodules/fzf-tab"]
-	path = submodules/fzf-tab
-	url = git@github.com:Aloxaf/fzf-tab.git
-
 [submodule "submodules/zsh-completions"]
 	path = submodules/zsh-completions
 	url = git@github.com:zsh-users/zsh-completions.git
+[submodule "submodules/fzf-tab"]
+	path = submodules/fzf-tab
+	url = git@github.com:oldfatcrab/fzf-tab.git
