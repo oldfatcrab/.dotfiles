@@ -6,14 +6,12 @@ if [ -d $HOME/.oh-my-zsh ]; then cp -r $HOME/.oh-my-zsh "$HOME/.oh-my-zsh_backup
 if [ -e $HOME/.zshrc ]; then cp $HOME/.zshrc "$HOME/.zshrc_backup_$CURRENT_TIME" && rm $HOME/.zshrc; fi
 if [ -e $HOME/.p10k.zsh ]; then cp $HOME/.p10k.zsh "$HOME/.p10k.zsh_backup_$CURRENT_TIME" && rm $HOME/.p10k.zsh; fi
 if [ -e $HOME/.gitconfig ]; then cp $HOME/.gitconfig "$HOME/.gitconfig_backup_$CURRENT_TIME" && rm $HOME/.gitconfig; fi
-if [ -e $HOME/.fzf_completion_preview ]; then cp $HOME/.fzf_completion_preview "$HOME/.fzf_completion_preview_backup_$CURRENT_TIME" && rm $HOME/.fzf_completion_preview; fi
 
 # create symbolic link to dotfiles
 ln -s $PWD/submodules/ohmyzsh $HOME/.oh-my-zsh
 ln -s $PWD/submodules/fzf-tab $HOME/.oh-my-zsh/custom/plugins/fzf-tab
 ln -s $PWD/zsh/zshrc.zsh $HOME/.zshrc
 ln -s $PWD/zsh/p10k.zsh $HOME/.p10k.zsh
-ln -s $PWD/zsh/fzf_completion_preview.zsh $HOME/.fzf_completion_preview
 ln -s $PWD/submodules/zsh-completions $HOME/.oh-my-zsh/custom/plugins/zsh-completions
 
 # Brew installation
