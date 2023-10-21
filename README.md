@@ -191,7 +191,16 @@ After you press `Ctrl-R` to fuzzy-search command history
 - you can use `tab` to multi-select
 
 ### Use `Tab` for command completion
-I added the following aliases to the end of `~/.zshrc` file:
+
+[`fzf-tab`](https://github.com/Aloxaf/fzf-tab) is a super handy tool that make `fzf` working even smoother, many thanks to the author and all contributors.
+
+However I still need to made some minor changes to make it work for me, so check out my modified version instead:
+
+```
+git clone https://github.com/oldfatcrab/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab
+```
+
+In `~/.zshrc` file, add `fzf-tab` to `plugins` list and add the following aliases to the end of the file as well:
 ```
 # disable sort when completing `git checkout`
 zstyle ':completion:*:git-checkout:*' sort false
@@ -236,9 +245,9 @@ fi'
 ```
 After you press `Tab` to fuzzy-complete command
 - there is a preview windows on the right 
-- you can use `space` to complete, or use `enter` to execute the command directly after completion is done
 - you can use up/down arrow to select, or `Ctrl-K`/`Ctrl-J`, `Ctrl-N`/`Ctrl-P`
 - you can use `,`/`.` to switch between groups
+- when completing path, you can use press `/` to go down to the next level
 
 ## Step 3: Set up `git`
 
