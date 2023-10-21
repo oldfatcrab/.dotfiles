@@ -215,7 +215,24 @@ zstyle ':fzf-tab:complete:(kill|ps):argument-rest' fzf-flags --preview-window=do
 zstyle ':fzf-tab:complete:systemctl-*:*' fzf-preview 'SYSTEMD_COLORS=1 systemctl status $word'
 
 # show file contents
-zstyle ':fzf-tab:complete:*:*' fzf-preview '~/.fzf_completion_preview ${(Q)word} ${(Q)group} ${(Q)realpath}'
+zstyle ':fzf-tab:complete:*:*' fzf-preview 'echo "\033[1m${(Q)group}\033[0m\n"
+if [[ "${(Q)group}" == "[file]" ]]; then
+  if [[ -n "${(Q)realpath}" ]]; then
+    mime=$(file -bL --mime-type "${(Q)realpath}")
+    category=${mime%%/*}
+    if [[ -d "${(Q)realpath}" ]]; then
+      eza --tree --level=2 --icons --color=always "${(Q)realpath}"
+    elif [[ "$category" == "text" ]]; then
+      prettybat --color=always --style=plain --paging=never "${(Q)realpath}"
+    fi
+  fi
+elif [[ "${(Q)group}" == "[alias]" ]]; then
+  echo "${(Q)desc}"
+elif [[ "${(Q)group}" =~ "command]$" ]]; then
+  which "${(Q)word}"
+elif [[ "${(Q)group}" == "[parameter]" ]]; then
+  echo "${(P)word}"
+fi'
 ```
 After you press `Tab` to fuzzy-complete command
 - there is a preview windows on the right 
