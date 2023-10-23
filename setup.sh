@@ -21,8 +21,7 @@ brew bundle --file "$PWD/brew/Brewfile"
 eval "$(/usr/local/bin/brew shellenv)"
 
 # gitconfig
-git config --global core.pager delta
-git config --global include.path "$PWD/git/delta.gitconfig"
-git config --global color.ui auto
+git config --global include.path "$PWD/git/core.gitconfig"
+git config --global --add include.path "$PWD/git/delta.gitconfig"
 
 source $HOME/.zshrc
