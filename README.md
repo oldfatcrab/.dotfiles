@@ -249,14 +249,10 @@ After you press `Tab` to fuzzy-complete command
 - you can use `,`/`.` to switch between groups
 - when completing path, you can use press `/` to go down to the next level
 
-## Step 3: Set up `git`
+## Step 3: Set up `vim` editor
 
 TBD
 
-## Step 4: Set up `vim` editor
-
-TBD
-
-## Step 5: Set up `tmux`
+## Step 4: Set up `tmux`
 
 TBD
