@@ -251,7 +251,18 @@ After you press `Tab` to fuzzy-complete command
 
 ## Step 3: Set up `vim` editor
 
-TBD
+### Install `neovim` and `NvChad`
+```
+brew install neovim
+git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
+```
+
+### Migrate from `vim` to `neovim`
+add these to `~/.zshrc`
+```
+alias vim=nvim
+alias vi=nvim
+```
 
 ## Step 4: Set up `tmux`
 
