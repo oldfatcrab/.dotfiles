@@ -19,8 +19,8 @@ mkdir -p $HOME/.config && ln -s $PWD/submodules/NvChad $HOME/.config/nvim
 # Brew installation
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew bundle --file "$PWD/brew/Brewfile"
-(echo; echo 'eval "$(/usr/local/bin/brew shellenv)"') >> "$HOME/.zprofile"
-eval "$(/usr/local/bin/brew shellenv)"
+(echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> "$HOME/.zprofile"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # gitconfig
 git config --global include.path "$PWD/git/core.gitconfig"
