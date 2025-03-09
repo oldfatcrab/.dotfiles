@@ -25,5 +25,6 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # gitconfig
 git config --global include.path "$PWD/git/core.gitconfig"
 git config --global --add include.path "$PWD/git/delta.gitconfig"
+git config --global core.editor "nvim"
 
 source $HOME/.zshrc
