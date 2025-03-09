@@ -37,7 +37,6 @@ If Warp terminal fix above then I will re-consider using it.
 
 ### Install MesloLGS Nerd Font
 ```
-brew tap homebrew/cask-fonts
 brew install --cask font-meslo-lg-nerd-font
 ```
 or any [nerd font](https://www.nerdfonts.com/font-downloads) you like.

@@ -9,4 +9,4 @@
 	url = https://github.com/oldfatcrab/fzf-tab.git
 [submodule "submodules/NvChad"]
 	path = submodules/NvChad
-	url = https://github.com/NvChad/NvChad.git
+	url = https://github.com/NvChad/starter.git

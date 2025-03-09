@@ -84,7 +84,6 @@ plugins=(
   fzf-tab
   git
   macos
-  ripgrep
   sudo
   web-search
   z
