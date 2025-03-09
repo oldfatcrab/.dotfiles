@@ -6,7 +6,7 @@ if [ -d $HOME/.oh-my-zsh ]; then cp -r $HOME/.oh-my-zsh "$HOME/.oh-my-zsh_backup
 if [ -e $HOME/.zshrc ]; then cp $HOME/.zshrc "$HOME/.zshrc_backup_$CURRENT_TIME" && rm $HOME/.zshrc; fi
 if [ -e $HOME/.p10k.zsh ]; then cp $HOME/.p10k.zsh "$HOME/.p10k.zsh_backup_$CURRENT_TIME" && rm $HOME/.p10k.zsh; fi
 if [ -e $HOME/.gitconfig ]; then cp $HOME/.gitconfig "$HOME/.gitconfig_backup_$CURRENT_TIME" && rm $HOME/.gitconfig; fi
-if [ -d $HOME/.config/nvim ]; then cp $HOME/.config/nvim "$HOME/.config/nvim_$CURRENT_TIME" && rm $HOME/.config/nvim && rm -rf $HOME/.local/share/nvim; fi
+if [ -d $HOME/.config/nvim ]; then cp $HOME/.config/nvim "$HOME/.config/nvim_$CURRENT_TIME" && rm -rf $HOME/.config/nvim $HOME/.local/state/nvim $HOME/.local/share/nvim; fi
 
 # create symbolic link to dotfiles
 ln -s $PWD/submodules/ohmyzsh $HOME/.oh-my-zsh
