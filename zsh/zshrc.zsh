@@ -213,3 +213,15 @@ source $HOMEBREW_PREFIX/share/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+
+# bun completions
+[ -s "/Users/oldfatcrab/.bun/_bun" ] && source "/Users/oldfatcrab/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/oldfatcrab/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions

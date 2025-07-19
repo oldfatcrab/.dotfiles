@@ -253,7 +253,7 @@ After you press `Tab` to fuzzy-complete command
 ### Install `neovim` and `NvChad`
 ```
 brew install neovim
-git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
+git clone https://github.com/NvChad/starter ~/.config/nvim && nvim
 ```
 
 ### Migrate from `vim` to `neovim`
