@@ -225,3 +225,50 @@ fpath=(/Users/oldfatcrab/.docker/completions $fpath)
 autoload -Uz compinit
 compinit
 # End of Docker CLI completions
+
+# Added by Antigravity
+export PATH="/Users/oldfatcrab/.antigravity/antigravity/bin:$PATH"
+
+# ==========================================
+# FKR Project: Gemini Context Auto-Loader
+# ==========================================
+
+function gemini_load() {
+    local prompt=""
+    local has_context=false
+
+    # 1. try loading GEMINI.md
+    if [[ -f "GEMINI.md" ]]; then
+        prompt+="[SYSTEM: Load Rules]\n$(cat GEMINI.md)\n\n"
+        has_context=true
+    fi
+
+    # 2. try loading AGENTS.md
+    if [[ -f "AGENTS.md" ]]; then
+        prompt+="[SYSTEM: Load Team]\n$(cat AGENTS.md)\n\n"
+        has_context=true
+    fi
+
+    # 3. try loading SKILLS.md
+    if [[ -f "SKILLS.md" ]]; then
+        prompt+="[SYSTEM: Load Team]\n$(cat SKILLS.md)\n\n"
+        has_context=true
+    fi
+
+    # 3. Execution Logic
+    if [ "$has_context" = true ]; then
+        echo "⚡️ Detected Project Context. Injecting AGENTS & GEMINI..."
+        prompt+="[USER TASK: Resume Context]\nWe are resuming development. Please analyze the loaded files and wait for instructions."
+        
+        # KEY FIX: Use --prompt-interactive (-i) to keep the session open!
+        # We append "$@" so you can still pass other flags like --debug if needed
+        command gemini --prompt-interactive "$prompt" "$@"
+    else
+        # No context files? Run as normal interactive CLI
+        command gemini "$@"
+    fi
+}
+
+# Override default command
+alias gemini="gemini_load"
+
