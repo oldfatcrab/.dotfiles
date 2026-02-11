@@ -10,3 +10,6 @@
 [submodule "submodules/NvChad"]
 	path = submodules/NvChad
 	url = https://github.com/NvChad/starter
+[submodule "submodules/oh-my-tmux"]
+	path = submodules/oh-my-tmux
+	url = https://github.com/gpakosz/.tmux.git

@@ -23,7 +23,7 @@
 - **Package Management**: Homebrew (macOS/Linux).
 - **Version Control**: Git. Commit messages must follow [Conventional Commits](https://www.conventionalcommits.org/).
 
-## 4. Project Roadmap & Status (Auto-Generated)
+## 4. Project Roadmap (Revised)
 - [x] **Phase 0: Initialization**
     - [x] Define Agents & Protocols (`GEMINI.md`, `AGENTS.md`).
     - [x] Audit existing structure.
@@ -31,11 +31,18 @@
     - [x] Modularize `.zshrc` (Split into aliases, exports, functions).
     - [x] Implement `gemini_load` for context injection.
     - [x] **Client Approval**: Phase 1 Deployed & Verified.
-- [ ] **Phase 2: Tmux Configuration (NEXT UP)**
-    - [ ] **Pending Decision**: Submodules vs. TPM (Client requested @Architect review).
-    - [ ] Action: Create `tmux.conf` and install TPM.
-- [ ] **Phase 3: Neovim Migration**
-    - [ ] Action: Refactor NvChad to `custom/` folder structure.
-
-## 5. Next Session Entry Point
-> When the user returns, start by answering the question: **"Is git submodule the best practice for Tmux plugins, or should we use TPM?"**
+- [x] **Phase 2: Tmux (Oh My Tmux)**
+    - [x] Install `gpakosz/.tmux` (Oh My Tmux) as a submodule.
+    - [x] Configure `tmux.conf.local` for user preferences.
+    - [x] Install Dracula theme for Tmux.
+    - [x] Ensure `~/.tmux.conf` is symlinked to `.dotfiles`.
+- [ ] **Phase 3: Neovim & VS Code**
+    - [ ] Install Dracula theme for Neovim (NvChad).
+    - [ ] Symlink Neovim config to `.dotfiles`.
+    - [ ] Create a `vscode/` directory in dotfiles and symlink `settings.json` and `keybindings.json` to the VS Code user directory.
+- [ ] **Phase 4: JetBrains IDE Strategy**
+    - [ ] **Architectural Review**: Discuss how to unify settings (Fonts, Color Scheme, Vim Plugin) across IntelliJ, PyCharm, GoLand, while keeping environment-specifics separate.
+    - [ ] Implement the shared configuration strategy.
+- [ ] **Phase 5: Consistency & Documentation**
+    - [ ] Verify `setup.sh` handles all the above symlinks (Idempotency check).
+    - [ ] Update `README.md` to reflect the new structure and installation steps.
