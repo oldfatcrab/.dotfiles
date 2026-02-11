@@ -36,13 +36,14 @@
     - [x] Configure `tmux.conf.local` for user preferences.
     - [x] Install Dracula theme for Tmux.
     - [x] Ensure `~/.tmux.conf` is symlinked to `.dotfiles`.
-- [ ] **Phase 3: Neovim & VS Code**
-    - [ ] Install Dracula theme for Neovim (NvChad).
-    - [ ] Symlink Neovim config to `.dotfiles`.
-    - [ ] Create a `vscode/` directory in dotfiles and symlink `settings.json` and `keybindings.json` to the VS Code user directory.
-- [ ] **Phase 4: JetBrains IDE Strategy**
-    - [ ] **Architectural Review**: Discuss how to unify settings (Fonts, Color Scheme, Vim Plugin) across IntelliJ, PyCharm, GoLand, while keeping environment-specifics separate.
-    - [ ] Implement the shared configuration strategy.
+- [x] **Phase 3: Neovim & VS Code**
+    - [x] Install Dracula theme for Neovim (NvChad).
+    - [x] Symlink Neovim config to `.dotfiles`.
+    - [x] Create a `vscode/` directory in dotfiles and symlink `settings.json` and `keybindings.json` to the VS Code user directory.
+    - [x] Implement VS Code extension snapshot/restore scripts.
+- [x] **Phase 4: JetBrains IDE Strategy**
+    - [x] **Architectural Review**: Discuss how to unify settings (Fonts, Color Scheme, Vim Plugin) across IntelliJ, PyCharm, GoLand, while keeping environment-specifics separate.
+    - [x] Implement the shared configuration strategy (.ideavimrc).
 - [ ] **Phase 5: Consistency & Documentation**
     - [ ] Verify `setup.sh` handles all the above symlinks (Idempotency check).
     - [ ] Update `README.md` to reflect the new structure and installation steps.

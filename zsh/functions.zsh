@@ -4,31 +4,33 @@
 
 function gemini_load() {
     local prompt=""
-    local has_context=false
+    local -a loaded_files
+    
+    # Define files and their corresponding headers in desired load order
+    local -a files_to_check=(
+        "GEMINI.md:[SYSTEM: Load Rules]"
+        "AGENTS.md:[SYSTEM: Load Team]"
+        "SKILLS.md:[SYSTEM: Load Skills]"
+    )
 
-    # 1. try loading GEMINI.md
-    if [[ -f "GEMINI.md" ]]; then
-        prompt+="[SYSTEM: Load Rules]\n$(cat GEMINI.md)\n\n"
-        has_context=true
-    fi
+    # Loop through files to build prompt and status
+    for entry in "${files_to_check[@]}"; do
+        local file="${entry%%:*}"
+        local header="${entry#*:}"
 
-    # 2. try loading AGENTS.md
-    if [[ -f "AGENTS.md" ]]; then
-        prompt+="[SYSTEM: Load Team]\n$(cat AGENTS.md)\n\n"
-        has_context=true
-    fi
+        if [[ -f "$file" ]]; then
+            prompt+="${header}\n$(cat "$file")\n\n"
+            loaded_files+=("$file")
+        fi
+    done
 
-    # 3. try loading SKILLS.md
-    if [[ -f "SKILLS.md" ]]; then
-        prompt+="[SYSTEM: Load Skills]\n$(cat SKILLS.md)\n\n"
-        has_context=true
-    fi
-
-    # 3. Execution Logic
-    if [ "$has_context" = true ]; then
-        echo "⚡️ Detected Project Context. Injecting AGENTS & GEMINI & SKILLS..."
-        prompt+="[USER TASK: Resume Context]\nWe are resuming development. Please analyze the loaded files and wait for instructions."
+    # Execution Logic
+    if (( ${#loaded_files[@]} > 0 )); then
+        # Join loaded files with comma for display
+        local file_list="${loaded_files[*]}"
+        echo "⚡️ Detected Project Context. Injecting: ${file_list// /, }..."
         
+        prompt+="[USER TASK: Resume Context]\nWe are resuming development. Please analyze the loaded files and wait for instructions."
         command gemini --prompt-interactive "$prompt" "$@"
     else
         command gemini "$@"
