@@ -1,0 +1,28 @@
+" --- JetBrains IdeaVim Configuration ---
+" Managed by Dotfiles
+
+" Basic Settings
+set scrolloff=5        " Keep 5 lines cursor offset
+set incsearch          " Incremental search
+set hlsearch           " Highlight search
+set ignorecase         " Ignore case in search
+set smartcase          " Smart case (override ignore if upper used)
+set showmode           " Show current mode
+set history=1000       " Undo history
+
+" JetBrains Specific
+set ideajoin           " Use smart join
+set idearefactormode=keep " Keep refactoring mode
+
+" Plugins (Emulated)
+set surround           " Enable surround plugin
+set multiple-cursors   " Enable multiple-cursors
+set commentary         " Enable commentary plugin
+set easymotion         " Enable easymotion
+
+" Keymaps
+let mapleader = " "
+nnoremap <leader>h <C-w>h
+nnoremap <leader>j <C-w>j
+nnoremap <leader>k <C-w>k
+nnoremap <leader>l <C-w>l
